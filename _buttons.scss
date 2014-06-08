@@ -1,0 +1,294 @@
+///*------------------------------------*\
+//    #BUTTONS
+//\*------------------------------------*/
+
+// A simple button object.
+
+// Predefine the variables below in order to alter and enable specific features.
+$tree-btn-padding:         halve($tree-base-spacing-unit) !default;
+$tree-btn-padding--small:  halve($tree-btn-padding) !default;
+$tree-btn-padding--large:  double($tree-btn-padding) !default;
+$tree-btn-background:      #5ba4e5 !default;
+$tree-btn-color:           #fff !default;
+$tree-btn-border-width:    1px !default;
+$tree-btn-border-style:    solid !default;
+$tree-btn-border-color:    $tree-btn-background !default;
+$tree-btn-radius:          0 !default;
+
+$tree-btn-secondary-background:    #001f3f !default;
+$tree-btn-secondary-border-color:  $tree-btn-secondary-background !default;
+
+$tree-btn-positive-background:     #9fbb58 !default;
+$tree-btn-positive-border-color:   $tree-btn-positive-background !default;
+
+$tree-btn-negative-background:     #e25440 !default;
+$tree-btn-negative-border-color:   $tree-btn-negative-background !default;
+
+$tree-enable-btn--secondary:  false !default;
+$tree-enable-btn--positive:   false !default;
+$tree-enable-btn--negative:   false !default;
+$tree-enable-btn--alpha:      false !default;
+$tree-enable-btn--beta:       false !default;
+$tree-enable-btn--gamma:      false !default;
+$tree-enable-btn--small:      false !default;
+$tree-enable-btn--large:      false !default;
+$tree-enable-btn--full:       false !default;
+$tree-enable-btn--pill:       false !default;
+
+
+
+
+
+// Here we set a variable assuming that `box-sizing: border-box;` is not set
+// globally. If it has been previously been defined, the following variable will
+// be overriden and will be set to `true`.
+$tree-global-border-box: false !default;
+
+
+
+
+
+//  1. Allow us to style box model properties.
+//  2. Line different sized buttons up a little nicer.
+//  3. Make buttons inherit font styles (often necessary when styling `input`s as
+//     buttons).
+//  4. Reset/normalize some styles.
+//  5. Force all button-styled elements to appear clickable.
+//  6. Fixes odd inner spacing in IE7.
+//  7. Subtract the border size from the padding value so that buttons do not
+//     grow larger as we add borders.
+.#{$tree-namespace}btn,
+%#{$tree-namespace}btn {
+    display: inline-block; // [1]
+    vertical-align: middle; // [2]
+    font: inherit; // [3]
+    text-align: center; // [4]
+    border: 0; // [4]
+    margin:  0; // [4]
+    cursor: pointer; // [5]
+    overflow: visible; // [6]
+    padding: $tree-btn-padding - $tree-btn-border-width  double($tree-btn-padding) - $tree-btn-border-width; // [7]
+
+    @if($tree-btn-radius != 0) {
+        border-radius: $tree-btn-radius;
+    }
+
+    &,
+    &:hover,
+    &:active,
+    &:focus,
+    &:visited {
+        text-decoration: none; // [4]
+        color: $tree-btn-color;
+    }
+
+
+    &:active {
+        box-shadow: rgba(0, 0, 0, .3) 0 0 2px inset;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+}
+
+// Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
+.#{$tree-namespace}btn::-moz-focus-inner,
+%#{$tree-namespace}btn::-moz-focus-inner {
+    border:  0;
+    padding: 0;
+}
+
+// Primary buttons.
+.#{$tree-namespace}btn--primary,
+%#{$tree-namespace}btn--primary {
+    background-color: $tree-btn-background;
+
+    @if($tree-btn-border-width != 0) {
+        border: $tree-btn-border-width $tree-btn-border-style $tree-btn-border-color;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        background-color: darken($tree-btn-background, 10%);
+        border-color:     darken($tree-btn-background, 10%);
+    }
+
+}
+
+
+
+
+
+@if ($tree-enable-btn--secondary == true) {
+    
+    // Secondary buttons.
+
+    .#{$tree-namespace}btn--secondary,
+    %#{$tree-namespace}btn--secondary {
+        background-color: $tree-btn-secondary-background;
+
+        @if($tree-btn-border-width != 0) {
+            border: $tree-btn-border-width $tree-btn-border-style $tree-btn-secondary-border-color;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: darken($tree-btn-secondary-background, 10%);
+            border-color:     darken($tree-btn-secondary-background, 10%);
+        }
+
+    }
+
+}
+
+@if ($tree-enable-btn--positive == true) {
+    
+    // Positive buttons.
+
+    .#{$tree-namespace}btn--positive,
+    %#{$tree-namespace}btn--positive {
+        background-color: $tree-btn-positive-background;
+
+        @if($tree-btn-border-width != 0) {
+            border: $tree-btn-border-width $tree-btn-border-style $tree-btn-positive-border-color;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: darken($tree-btn-positive-background, 10%);
+            border-color:     darken($tree-btn-positive-background, 10%);
+        }
+
+    }
+
+}
+
+@if ($tree-enable-btn--negative == true) {
+
+    // Negative buttons.
+
+    .#{$tree-namespace}btn--negative,
+    %#{$tree-namespace}btn--negative {
+        background-color: $tree-btn-negative-background;
+
+        @if($tree-btn-border-width != 0) {
+            border: $tree-btn-border-width $tree-btn-border-style $tree-btn-negative-border-color;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: darken($tree-btn-negative-background, 10%);
+            border-color:     darken($tree-btn-negative-background, 10%);
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($tree-enable-btn--alpha == true) {
+
+    // Alpha font-size modifier.
+    
+    .#{$tree-namespace}btn--alpha,
+    %#{$tree-namespace}btn--alpha {
+        font-size: 125%;
+    }
+    
+}
+
+@if ($tree-enable-btn--beta == true) {
+
+    // Beta font-size modifier.
+    
+    .#{$tree-namespace}btn--beta,
+    %#{$tree-namespace}btn--beta {
+        font-size: 110%;
+    }
+    
+}
+
+@if ($tree-enable-btn--gamma == true) {
+
+    // Gamma font-size modifier.
+    
+    .#{$tree-namespace}btn--gamma,
+    %#{$tree-namespace}btn--gamma {
+        font-size: 85%;
+    }
+    
+}
+
+
+
+
+@if ($tree-enable-btn--small == true) {
+
+    // Small buttons.
+
+    .#{$tree-namespace}btn--small,
+    %#{$tree-namespace}btn--small {
+        padding: $tree-btn-padding--small - $tree-btn-border-width  double($tree-btn-padding--small) - $tree-btn-border-width; // [7]
+    }
+
+}
+
+@if ($tree-enable-btn--large == true) {
+
+    // Large buttons.
+
+    .#{$tree-namespace}btn--large,
+    %#{$tree-namespace}btn--large {
+        padding: $tree-btn-padding--large - $tree-btn-border-width  double($tree-btn-padding--large) - $tree-btn-border-width; // [7]
+    }
+
+}
+
+
+
+
+
+@if ($tree-enable-btn--full == true) {
+
+    // Full-width buttons.
+
+    .#{$tree-namespace}btn--full,
+    %#{$tree-namespace}btn--full {
+        width: 100%;
+
+        @if $tree-global-border-box == false {
+            // Remove paddings so that widths and paddings don’t conflict.
+            padding-right: 0;
+            padding-left:  0;
+        }
+
+    }
+
+}
+
+
+
+
+
+@if ($tree-enable-btn--pill == true) {
+
+    //  Round-ended buttons.
+    //
+    //  1. Overly-large value to ensure the radius rounds the whole end of the
+    //     button.
+
+    .#{$tree-namespace}btn--pill,
+    %#{$tree-namespace}btn--pill {
+        border-radius: 100px; // [1]
+    }
+
+}
