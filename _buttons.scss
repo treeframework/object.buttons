@@ -5,6 +5,8 @@
 // A simple button object.
 
 // Predefine the variables below in order to alter and enable specific features.
+$tree-btn-namespace        $tree-namespace !default;
+
 $tree-btn-padding:         halve($tree-base-spacing-unit) !default;
 $tree-btn-padding--small:  halve($tree-btn-padding) !default;
 $tree-btn-padding--large:  double($tree-btn-padding) !default;
@@ -57,8 +59,8 @@ $tree-global-border-box: false !default;
 //  6. Fixes odd inner spacing in IE7.
 //  7. Subtract the border size from the padding value so that buttons do not
 //     grow larger as we add borders.
-.#{$tree-namespace}btn,
-%#{$tree-namespace}btn {
+.#{$tree-btn-namespace}btn,
+%#{$tree-btn-namespace}btn {
     display: inline-block; // [1]
     vertical-align: middle; // [2]
     font: inherit; // [3]
@@ -94,15 +96,15 @@ $tree-global-border-box: false !default;
 }
 
 // Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
-.#{$tree-namespace}btn::-moz-focus-inner,
-%#{$tree-namespace}btn::-moz-focus-inner {
+.#{$tree-btn-namespace}btn::-moz-focus-inner,
+%#{$tree-btn-namespace}btn::-moz-focus-inner {
     border:  0;
     padding: 0;
 }
 
 // Primary buttons.
-.#{$tree-namespace}btn--primary,
-%#{$tree-namespace}btn--primary {
+.#{$tree-btn-namespace}btn--primary,
+%#{$tree-btn-namespace}btn--primary {
     background-color: $tree-btn-background;
 
     @if($tree-btn-border-width != 0) {
@@ -123,11 +125,11 @@ $tree-global-border-box: false !default;
 
 
 @if ($tree-enable-btn--secondary == true) {
-    
+
     // Secondary buttons.
 
-    .#{$tree-namespace}btn--secondary,
-    %#{$tree-namespace}btn--secondary {
+    .#{$tree-btn-namespace}btn--secondary,
+    %#{$tree-btn-namespace}btn--secondary {
         background-color: $tree-btn-secondary-background;
 
         @if($tree-btn-border-width != 0) {
@@ -146,11 +148,11 @@ $tree-global-border-box: false !default;
 }
 
 @if ($tree-enable-btn--positive == true) {
-    
+
     // Positive buttons.
 
-    .#{$tree-namespace}btn--positive,
-    %#{$tree-namespace}btn--positive {
+    .#{$tree-btn-namespace}btn--positive,
+    %#{$tree-btn-namespace}btn--positive {
         background-color: $tree-btn-positive-background;
 
         @if($tree-btn-border-width != 0) {
@@ -172,8 +174,8 @@ $tree-global-border-box: false !default;
 
     // Negative buttons.
 
-    .#{$tree-namespace}btn--negative,
-    %#{$tree-namespace}btn--negative {
+    .#{$tree-btn-namespace}btn--negative,
+    %#{$tree-btn-namespace}btn--negative {
         background-color: $tree-btn-negative-background;
 
         @if($tree-btn-border-width != 0) {
@@ -198,34 +200,34 @@ $tree-global-border-box: false !default;
 @if ($tree-enable-btn--alpha == true) {
 
     // Alpha font-size modifier.
-    
-    .#{$tree-namespace}btn--alpha,
-    %#{$tree-namespace}btn--alpha {
+
+    .#{$tree-btn-namespace}btn--alpha,
+    %#{$tree-btn-namespace}btn--alpha {
         font-size: 125%;
     }
-    
+
 }
 
 @if ($tree-enable-btn--beta == true) {
 
     // Beta font-size modifier.
-    
-    .#{$tree-namespace}btn--beta,
-    %#{$tree-namespace}btn--beta {
+
+    .#{$tree-btn-namespace}btn--beta,
+    %#{$tree-btn-namespace}btn--beta {
         font-size: 110%;
     }
-    
+
 }
 
 @if ($tree-enable-btn--gamma == true) {
 
     // Gamma font-size modifier.
-    
-    .#{$tree-namespace}btn--gamma,
-    %#{$tree-namespace}btn--gamma {
+
+    .#{$tree-btn-namespace}btn--gamma,
+    %#{$tree-btn-namespace}btn--gamma {
         font-size: 85%;
     }
-    
+
 }
 
 
@@ -235,8 +237,8 @@ $tree-global-border-box: false !default;
 
     // Small buttons.
 
-    .#{$tree-namespace}btn--small,
-    %#{$tree-namespace}btn--small {
+    .#{$tree-btn-namespace}btn--small,
+    %#{$tree-btn-namespace}btn--small {
         padding: $tree-btn-padding--small - $tree-btn-border-width  double($tree-btn-padding--small) - $tree-btn-border-width; // [7]
     }
 
@@ -246,8 +248,8 @@ $tree-global-border-box: false !default;
 
     // Large buttons.
 
-    .#{$tree-namespace}btn--large,
-    %#{$tree-namespace}btn--large {
+    .#{$tree-btn-namespace}btn--large,
+    %#{$tree-btn-namespace}btn--large {
         padding: $tree-btn-padding--large - $tree-btn-border-width  double($tree-btn-padding--large) - $tree-btn-border-width; // [7]
     }
 
@@ -261,8 +263,8 @@ $tree-global-border-box: false !default;
 
     // Full-width buttons.
 
-    .#{$tree-namespace}btn--full,
-    %#{$tree-namespace}btn--full {
+    .#{$tree-btn-namespace}btn--full,
+    %#{$tree-btn-namespace}btn--full {
         width: 100%;
 
         @if $tree-global-border-box == false {
@@ -286,8 +288,8 @@ $tree-global-border-box: false !default;
     //  1. Overly-large value to ensure the radius rounds the whole end of the
     //     button.
 
-    .#{$tree-namespace}btn--pill,
-    %#{$tree-namespace}btn--pill {
+    .#{$tree-btn-namespace}btn--pill,
+    %#{$tree-btn-namespace}btn--pill {
         border-radius: 100px; // [1]
     }
 
