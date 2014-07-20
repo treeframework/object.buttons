@@ -5,7 +5,7 @@
 // A simple button object.
 
 // Predefine the variables below in order to alter and enable specific features.
-$tree-btn-namespace        $tree-namespace !default;
+$tree-btn-namespace:       $tree-namespace !default;
 
 $tree-btn-padding:         halve($tree-base-spacing-unit) !default;
 $tree-btn-padding--small:  halve($tree-btn-padding) !default;
