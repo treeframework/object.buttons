@@ -1,7 +1,13 @@
 # The button object
 
-The `button` object is clone of [inuitcss] (https://github.com/inuitcss) -
-[objects.buttons] (https://github.com/inuitcss/objects.buttons) <q>a simple,
-robust, extensible baseline for building entire suites of buttons onto</q>.
+The `button` object is a simple, robust, extensible baseline for building
+entire suites of buttons onto.
 
-It is develop and maintained by [Harry Roberts] (https://twitter.com/csswizardry).
+Install using Bower:
+
+    $ bower install --save tree-buttons
+
+## Credits
+
+* **[inuitcss](https://github.com/inuitcss)** Powerful, Sass-based, OOCSS
+framework designed with scalability and performance in mind.
