@@ -1,19 +1,22 @@
 {
   "name": "tree-buttons",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "https://github.com/treeframework/object.buttons",
   "authors": [
     "Harry Roberts <harry@csswizardry.com>",
     "Ilia Kolev <info@iliakolev.com>"
   ],
   "description": "A simple, extensible button object.",
-  "main": "_buttons.scss",
+  "main": "_object.buttons.scss",
+  "ignore": [
+    "*.md"
+  ],
   "keywords": [
     "css"
   ],
   "license": "Apache",
   "dependencies": {
-    "tree-functions": "latest",
-    "tree-defaults": "latest"
+    "tree-defaults": "~0.2.4",
+    "tree-functions": "~0.2.4"
   }
 }
