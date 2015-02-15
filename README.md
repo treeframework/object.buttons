@@ -5,7 +5,15 @@ entire suites of buttons onto.
 
 Install using Bower:
 
-    $ bower install --save tree-buttons
+```sh
+$ bower install tree-buttons --save
+```
+
+Instal using npm:
+
+```sh
+$ npm install tree-buttons --save
+```
 
 ## Credits
 
